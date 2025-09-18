@@ -32,3 +32,5 @@ func main() {
 	}
 	defer file.Close()
 }
+
+func getValues(file io.Reader)
