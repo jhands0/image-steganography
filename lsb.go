@@ -34,8 +34,21 @@ func main() {
 }
 
 type Pixel struct {
-	r	uint8
-	b	uint8
-	c	uint8
-	a	uint8
+	r	u8
+	g	u8
+	b	u8
+	a	u8
+}
+
+func imageToRGBA(img image.Image) []Pixel {
+	size := img.Bounds()
+	raw := make([]Pixel, (size.Max.X - size.Min.X) * (size.Max.Y - size.Min.Y))
+	idx := 0
+
+	for y := size.Min.Y; y < size.Max.Y; y++ {
+		for x := size.Min.X; x < size.Max.X; x++ {
+			r, g, b, a = img.At(x, y).RGBA()
+			raw[i] = Pixel{r: r, g: g, b: b, a: a}
+		}
+	}
 }
