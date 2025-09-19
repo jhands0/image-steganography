@@ -48,7 +48,10 @@ func imageToRGBA(img image.Image) []Pixel {
 	for y := size.Min.Y; y < size.Max.Y; y++ {
 		for x := size.Min.X; x < size.Max.X; x++ {
 			r, g, b, a = img.At(x, y).RGBA()
-			raw[i] = Pixel{r: r, g: g, b: b, a: a}
+			raw[idx] = Pixel{r: r, g: g, b: b, a: a}
+			idx += 1
 		}
 	}
+
+	return raw
 }
