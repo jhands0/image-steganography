@@ -33,4 +33,9 @@ func main() {
 	defer file.Close()
 }
 
-func getValues(file io.Reader)
+type Pixel struct {
+	r	uint8
+	b	uint8
+	c	uint8
+	a	uint8
+}
